@@ -1,18 +1,23 @@
-<p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:020617,55:1E3A8A,100:2563EB&height=190&section=header&text=Rohan%20Patel&fontSize=60&fontColor=F1F5F9&fontAlignY=42&desc=AI%20supply%20chain%20security%20%C2%B7%20Go%20%C2%B7%20Open%20source&descAlignY=68&descSize=17&animation=fadeIn" width="100%" alt="Rohan Patel — AI supply chain security" />
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=19&duration=3600&pause=1200&color=3B82F6&center=true&vCenter=true&width=720&lines=I+build+security+tooling+for+the+AI+supply+chain.;Creator+of+AIROM%2C+an+open-source+AIBOM+scanner.;Every+finding+carries+the+file%3Aline+it+came+from." alt="I build security tooling for the AI supply chain." />
-</p>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:020617,55:1E3A8A,100:2563EB&height=8&section=header" width="100%" alt="" />
 
-<p align="center">
-  <a href="https://airom.dev"><img src="https://img.shields.io/badge/airom.dev-020617?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/rohanpatel8727/"><img src="https://img.shields.io/badge/LinkedIn-1E3A8A?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://github.com/airomhq/airom"><img src="https://img.shields.io/badge/AIROM-2563EB?style=for-the-badge&logo=go&logoColor=white" /></a>
-  <a href="https://pypi.org/project/airom/"><img src="https://img.shields.io/pypi/v/airom?style=for-the-badge&label=pip%20install%20airom&color=3B82F6" /></a>
-  <a href="https://docs.airom.dev"><img src="https://img.shields.io/badge/Docs-60A5FA?style=for-the-badge&logo=readthedocs&logoColor=white" /></a>
-</p>
+# Rohan Patel
+
+### AI supply chain security · Go · Open source
+
+**I build security tooling for the AI supply chain.**
+Creator of [AIROM](https://github.com/airomhq/airom), an open-source AIBOM scanner where every finding carries the `file:line` it came from.
+
+<a href="https://airom.dev"><img src="https://img.shields.io/badge/airom.dev-020617?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+<a href="https://www.linkedin.com/in/rohanpatel8727/"><img src="https://img.shields.io/badge/LinkedIn-1E3A8A?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+<a href="https://github.com/airomhq/airom"><img src="https://img.shields.io/badge/AIROM-2563EB?style=for-the-badge&logo=go&logoColor=white" /></a>
+<a href="https://pypi.org/project/airom/"><img src="https://img.shields.io/pypi/v/airom?style=for-the-badge&label=pip%20install%20airom&color=3B82F6" /></a>
+<a href="https://docs.airom.dev"><img src="https://img.shields.io/badge/Docs-60A5FA?style=for-the-badge&logo=readthedocs&logoColor=white" /></a>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563EB,45:1E3A8A,100:020617&height=8&section=header" width="100%" alt="" />
+
+</div>
 
 ---
 
