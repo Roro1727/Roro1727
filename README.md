@@ -159,7 +159,7 @@ guess.
 <a href="https://github.com/airomhq/airom"><img src="https://github-readme-stats.vercel.app/api/pin/?username=airomhq&repo=airom&hide_border=true&title_color=3B82F6&icon_color=3B82F6&bg_color=020617&text_color=C9D1D9" alt="airomhq/airom" /></a>
 <a href="https://github.com/airomhq/airom-rules"><img src="https://github-readme-stats.vercel.app/api/pin/?username=airomhq&repo=airom-rules&hide_border=true&title_color=3B82F6&icon_color=3B82F6&bg_color=020617&text_color=C9D1D9" alt="airomhq/airom-rules" /></a>
 
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=Roro1727&show_icons=true&count_private=true&hide=stars&hide_border=true&title_color=3B82F6&icon_color=3B82F6&bg_color=020617&text_color=C9D1D9" alt="stats" />
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=Roro1727&show_icons=true&count_private=true&hide=stars&hide_rank=true&hide_border=true&title_color=3B82F6&icon_color=3B82F6&bg_color=020617&text_color=C9D1D9" alt="stats" />
 
 <br/><br/>
 
