@@ -1,10 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:020617,55:1E3A8A,100:2563EB&height=8&section=header" width="100%" alt="" />
-
-# Rohan Patel
-
-### AI supply chain security · Go · Open source
+<img src="assets/banner.png" width="100%" alt="Rohan Patel — AI supply chain security · Go · Open source" />
 
 **I build security tooling for the AI supply chain.**
 Creator of [AIROM](https://github.com/airomhq/airom), an open-source AIBOM scanner where every finding carries the `file:line` it came from.
@@ -14,8 +10,6 @@ Creator of [AIROM](https://github.com/airomhq/airom), an open-source AIBOM scann
 <a href="https://github.com/airomhq/airom"><img src="https://img.shields.io/badge/AIROM-2563EB?style=for-the-badge&logo=go&logoColor=white" /></a>
 <a href="https://pypi.org/project/airom/"><img src="https://img.shields.io/pypi/v/airom?style=for-the-badge&label=pip%20install%20airom&color=3B82F6" /></a>
 <a href="https://docs.airom.dev"><img src="https://img.shields.io/badge/Docs-60A5FA?style=for-the-badge&logo=readthedocs&logoColor=white" /></a>
-
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:2563EB,45:1E3A8A,100:020617&height=8&section=header" width="100%" alt="" />
 
 </div>
 
