@@ -1,32 +1,36 @@
-<div align="center">
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:020617,55:1E3A8A,100:2563EB&height=190&section=header&text=Rohan%20Patel&fontSize=60&fontColor=F1F5F9&fontAlignY=42&desc=AI%20supply%20chain%20security%20%C2%B7%20Go%20%C2%B7%20Open%20source&descAlignY=68&descSize=17&animation=fadeIn" width="100%" alt="Rohan Patel — AI supply chain security" />
+</p>
 
-# Roro
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=19&duration=3600&pause=1200&color=3B82F6&center=true&vCenter=true&width=720&lines=I+build+security+tooling+for+the+AI+supply+chain.;Creator+of+AIROM%2C+an+open-source+AIBOM+scanner.;Every+finding+carries+the+file%3Aline+it+came+from." alt="I build security tooling for the AI supply chain." />
+</p>
 
-**I build security tooling for the AI supply chain.**
-
-Mostly Go. Mostly the unglamorous parts: parsers that eat untrusted bytes,
-evidence that survives serialization, and output a machine downstream can actually trust.
-
-[![AIROM](https://img.shields.io/badge/AIROM-AI_Bill_of_Materials-2563EB?style=for-the-badge&logo=go&logoColor=white)](https://github.com/airomhq/airom)
-[![airom.dev](https://img.shields.io/badge/airom.dev-visit-0F172A?style=for-the-badge)](https://airom.dev)
-[![PyPI](https://img.shields.io/pypi/v/airom?style=for-the-badge&label=pip%20install%20airom&color=3B82F6)](https://pypi.org/project/airom/)
-
-</div>
+<p align="center">
+  <a href="https://airom.dev"><img src="https://img.shields.io/badge/airom.dev-020617?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/rohanpatel8727/"><img src="https://img.shields.io/badge/LinkedIn-1E3A8A?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://github.com/airomhq/airom"><img src="https://img.shields.io/badge/AIROM-2563EB?style=for-the-badge&logo=go&logoColor=white" /></a>
+  <a href="https://pypi.org/project/airom/"><img src="https://img.shields.io/pypi/v/airom?style=for-the-badge&label=pip%20install%20airom&color=3B82F6" /></a>
+  <a href="https://docs.airom.dev"><img src="https://img.shields.io/badge/Docs-60A5FA?style=for-the-badge&logo=readthedocs&logoColor=white" /></a>
+</p>
 
 ---
 
-## What I'm building
+### About
 
-### [AIROM](https://github.com/airomhq/airom) — the AI bill of materials that shows its work
+I build **AIROM**, an open-source AI Bill of Materials scanner. It finds the AI inside a
+codebase — models, prompts, datasets, embeddings, vector databases, frameworks — and records
+the evidence behind every single finding.
 
-An open-source **AIBOM scanner**. Point it at a repo, image, or Kubernetes workload and it
-returns every AI component inside: models, prompts, datasets, embeddings, vector databases,
-frameworks, serving infrastructure.
+Most of my work is the unglamorous half of that: parsers that eat untrusted bytes without
+trusting them, an evidence model that survives serialization into five formats, and a release
+pipeline you can verify without taking my word for anything.
 
-The part that makes it different is boring to say and hard to build: **every finding carries
-the `file:line` it was seen at**, the detector that found it, and the arithmetic behind its
-confidence score. When an auditor asks *"why does your AIBOM say `gpt-4.1`?"*, there is an
-answer, and it is in the document.
+> Unknown is not the same as safe. A scanner that guesses is worse than one that says nothing.
+
+---
+
+### AIROM — the AI bill of materials that shows its work
 
 ```bash
 pip install airom && airom scan .
@@ -43,40 +47,85 @@ pip install airom && airom scan .
 └──────────────────┴────────────────────────┴─────────┴──────────┴───────┴────────────────────┘
 ```
 
+That `LOCATION` column is the whole point. When an auditor asks *"why does your AIBOM say
+`gpt-4.1`?"*, there is an answer and it is in the document: the file, the line, the detector
+that fired, and the arithmetic behind the confidence score.
+
 <table>
-<tr><td><b>Scale</b></td><td>~59k lines of Go · 114 test files · 29 releases · 69 rule packs · 9 languages</td></tr>
-<tr><td><b>Standards</b></td><td>CycloneDX 1.6/1.7 · SPDX 3.0.1 · SARIF 2.1.0 · OpenVEX · NIST AI RMF · OWASP Agentic</td></tr>
-<tr><td><b>Ships as</b></td><td>One static <code>CGO_ENABLED=0</code> binary, a Python SDK, and a signed rule-update channel</td></tr>
-<tr><td><b>Supply chain</b></td><td>Keyless-cosign-signed releases · ed25519-signed rule bundles · reproducible builds</td></tr>
+<tr>
+<td width="50%" valign="top">
+
+#### What it is
+
+~59k lines of Go, 114 test files, 29 releases. Ships as one static `CGO_ENABLED=0` binary, a
+Python SDK on PyPI, and a signed rule channel.
+
+Detects across **9 languages**, from manifests, lockfiles, installed metadata, binary model
+headers, and even frozen PyInstaller archives.
+
+Emits **CycloneDX 1.6/1.7**, **SPDX 3.0.1**, **SARIF 2.1.0**, **OpenVEX**, JSON, YAML, and a
+compliance view mapping NIST AI RMF and OWASP Agentic controls.
+
+</td>
+<td width="50%" valign="top">
+
+#### How it is built
+
+**Parsers are hostile input.** Every binary header parser — GGUF, safetensors, ONNX, PyTorch,
+SavedModel, TFLite, HDF5, TensorRT — is fuzzed in CI and must return an error, never panic.
+Weights are identified by magic bytes. Nothing is loaded or executed, ever.
+
+**Releases are verifiable.** Keyless-cosign-signed, reproducible, checksummed. The rule-update
+channel is ed25519-signed with rollback protection.
+
+**The build is the gate.** Race tests, 6 cross-compile targets, fuzz campaigns, an RSS
+ceiling, CodeQL, govulncheck, and a benchmark gate that fails on detection regression.
+
+</td>
+</tr>
 </table>
 
 ---
 
-## How I work on it
+### Things I shipped recently
 
-**Parsers are hostile input, so they get fuzzed.** Every binary header parser — GGUF,
-safetensors, ONNX, PyTorch, SavedModel, TFLite, HDF5, TensorRT — runs under a fuzz campaign in
-CI and must return an error, never panic. Model weights are identified by magic bytes and
-bounded header reads. Nothing is ever loaded, deserialized, or executed.
+<table>
+<tr>
+<td width="50%" valign="top">
 
-**Unknown is not the same as safe.** A version that could not be resolved stays empty instead
-of being guessed. A model outside the lifecycle catalog gets no claim rather than a quiet
-"supported". Every scan emits an assurance account stating what it could *not* prove.
+**A traversal guard that let `..` through**
+The check tested for `..` followed by a separator, so an entry named exactly `..` resolved to
+the extraction root's **parent**. Not exploitable — it failed safe by accident rather than by
+design. Replaced with `filepath.IsLocal` plus eight refusal cases.
 
-**A fix without a failing test is a guess.** When I fix something, I first make the test fail
-without the fix. That found a traversal guard that let an archive entry named `..` resolve to
-its parent, a rule pack shipping twice so its findings counted double, and a lexer that had
-been taking untrusted bytes for months with nothing fuzzing it.
+**A rule pack that shipped twice**
+Two packs, same keywords, different IDs. One line of Python produced **four** occurrences of
+one component, feeding the confidence calculus corroboration that did not exist.
 
-**The build is the gate.** 7 CI workflows: race tests, cross-compilation to 6 targets, fuzz
-smoke, perf gates with an RSS ceiling, CodeQL, govulncheck, and a benchmark gate that fails on
-detection regression.
+</td>
+<td width="50%" valign="top">
+
+**A lexer nothing ever fuzzed**
+`allLangs` was commented "every language with a real lexer" and listed eight. The config table
+had nine. SQL was the gap, and `.sql` files are scanned in a normal run. ~13M fuzz executions
+later: no crash, and a guard now asserts the two lists agree.
+
+**A schema that rejected its own output**
+`tool.eolCatalog` was emitted for months, never declared in a schema that closes
+`additionalProperties`. Nothing noticed, because the only test checked that the file parses.
+
+</td>
+</tr>
+</table>
+
+Each of those shipped with a test that fails without the fix. A fix without a failing test is a
+guess.
 
 ---
 
-## The ecosystem
+### The ecosystem
 
-| Repo | What it is |
+| | |
 |---|---|
 | [**airom**](https://github.com/airomhq/airom) | The scanner. Go, Apache-2.0. |
 | [**airom-rules**](https://github.com/airomhq/airom-rules) | Signed rule channel — new providers reach users without a new binary. |
@@ -85,33 +134,30 @@ detection regression.
 
 ---
 
-## Toolbox
+### Stack
 
-![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=flat-square&logo=jenkins&logoColor=white)
-
----
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Roro1727&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=3B82F6&icon_color=3B82F6&bg_color=0D1117&text_color=C9D1D9" alt="stats" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Roro1727&layout=compact&hide_border=true&title_color=3B82F6&bg_color=0D1117&text_color=C9D1D9&langs_count=6" alt="languages" />
-
-</div>
+<p>
+<img src="https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white" />
+<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+<img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" />
+<img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white" />
+<img src="https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white" />
+<img src="https://img.shields.io/badge/CycloneDX-000000?style=for-the-badge&logo=cyclonedx&logoColor=white" />
+<img src="https://img.shields.io/badge/Sigstore-2F2F2F?style=for-the-badge&logo=sigstore&logoColor=white" />
+</p>
 
 ---
 
 <div align="center">
 
-**Working on AI supply chain security. Always up for talking about evidence models, parser safety, or why your SBOM has no idea what an embedding is.**
+<img height="160" src="https://github-readme-stats.vercel.app/api?username=Roro1727&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&title_color=3B82F6&icon_color=3B82F6&bg_color=020617&text_color=C9D1D9" alt="stats" />
+<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Roro1727&layout=compact&hide_border=true&title_color=3B82F6&bg_color=020617&text_color=C9D1D9&langs_count=6" alt="languages" />
 
-[![airom.dev](https://img.shields.io/badge/airom.dev-0F172A?style=flat-square&logo=firefox&logoColor=white)](https://airom.dev)
-[![Issues](https://img.shields.io/badge/Reach_me-via_GitHub_issues-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/airomhq/airom/issues)
+<br/><br/>
+
+**Happy to talk about evidence models, parser safety, or why your SBOM has no idea what an embedding is.**
+
+<a href="https://www.linkedin.com/in/rohanpatel8727/"><img src="https://img.shields.io/badge/Let's_talk-LinkedIn-1E3A8A?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 
 </div>
