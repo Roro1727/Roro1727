@@ -1,9 +1,8 @@
 <div align="center">
 
-<img src="assets/banner.png" width="100%" alt="Rohan Patel — AI supply chain security · Go · Open source" />
+<img src="assets/banner.png" width="100%" alt="Rohan Patel — Security Analyst · AI Security · Observability" />
 
-**I build security tooling for the AI supply chain.**
-Creator of [AIROM](https://github.com/airomhq/airom), an open-source AIBOM scanner where every finding carries the `file:line` it came from.
+<img src="https://readme-typing-svg.demolab.com?font=Inter&weight=500&size=19&duration=3600&pause=1200&color=3B82F6&center=true&vCenter=true&width=720&lines=I+build+security+tooling+for+the+AI+supply+chain.;Creator+of+AIROM%2C+an+open-source+AIBOM+scanner.;Every+finding+carries+the+file%3Aline+it+came+from." alt="I build security tooling for the AI supply chain." />
 
 <a href="https://airom.dev"><img src="https://img.shields.io/badge/airom.dev-020617?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
 <a href="https://www.linkedin.com/in/rohanpatel8727/"><img src="https://img.shields.io/badge/LinkedIn-1E3A8A?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
